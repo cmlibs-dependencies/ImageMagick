@@ -263,6 +263,7 @@ static Image *ReadAnalyzeImage(const ImageInfo *image_info,ExceptionInfo *except
 	/*
 	  Read image data.
 	*/
+  quantum_info=DestroyQuantumInfo(quantum_info);
   canvas_image=DestroyImage(canvas_image);
   (void) CloseBlob(image);
   return(GetFirstImageInList(image));
