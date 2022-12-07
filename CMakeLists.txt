@@ -39,6 +39,10 @@ cmake_minimum_required( VERSION 3.0 )
 project(ImageMagick VERSION 7.0.3.5 LANGUAGES C CXX)
 set(CMAKE_POSITION_INDEPENDENT_CODE YES)
 
+if(POLICY CMP0074)
+  cmake_policy(SET CMP0074 NEW)
+endif()
+
 # Specific library options
 option( IMAGEMAGICK_MODULE_SUPPORT "ImageMagick module support" FALSE )
 option( IMAGEMAGICK_HDRI "ImageMagick High Dynamic Range Imagery" FALSE )
