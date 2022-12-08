@@ -40,6 +40,9 @@
 
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@SIZEOF_VOID_P ${CMAKE_SIZEOF_VOID_P}
 
+/* As of C++14 the restrict keyword does nothing so we won't use it. */
+#define _magickcore_restrict
+
 /* Define if building universal (internal helper macro) */
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@AC_APPLE_UNIVERSAL_BUILD
 
