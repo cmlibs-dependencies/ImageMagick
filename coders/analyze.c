@@ -202,7 +202,7 @@ static Image *ReadAnalyzeImage(const ImageInfo *image_info,ExceptionInfo *except
   pixels=GetQuantumPixels(quantum_info);
   if ((image_info->ping != MagickFalse) && (image_info->number_scenes != 0))
   {
-	  printf("here\n");
+	  printf("here!!!!!\n");
   }
   length=GetQuantumExtent(canvas_image,quantum_info,quantum_type);
   count=ReadBlob(image,length,pixels);
@@ -303,6 +303,7 @@ ModuleExport size_t RegisterANALYZEImage(void)
   entry->flags^=CoderAdjoinFlag;
   entry->flags|=CoderRawSupportFlag;
   entry->flags|=CoderEndianSupportFlag;
+  entry->format_type=ImplicitFormatType;
   (void) RegisterMagickInfo(entry);
   return(MagickImageCoderSignature);
 }

@@ -15,6 +15,7 @@
 */
 
 AddMagickCoder(AAI)
+AddMagickCoder(ANALYZE)
 AddMagickCoder(ART)
 AddMagickCoder(ASHLAR)
 AddMagickCoder(AVS)
