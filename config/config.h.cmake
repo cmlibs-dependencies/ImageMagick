@@ -3,6 +3,43 @@
 
 /* config/config.h.cmake.  Created for cmake to configure.  */
 
+/* coders subdirectory. */
+#ifndef MAGICKCORE_CODER_DIRNAME
+#define MAGICKCORE_CODER_DIRNAME "coders"
+#endif
+
+/* Directory where architecture-dependent configuration files live. */
+#ifndef MAGICKCORE_CONFIGURE_PATH
+#define MAGICKCORE_CONFIGURE_PATH "etc"
+#endif
+
+/* Subdirectory of lib where architecture-dependent configuration files live.
+   */
+#ifndef MAGICKCORE_CONFIGURE_RELATIVE_PATH
+#define MAGICKCORE_CONFIGURE_RELATIVE_PATH "${PROJECT_NAME}-${PROJECT_VERSION_MAJOR}"
+#endif
+
+/* Directory where ImageMagick documents live. */
+#ifndef MAGICKCORE_DOCUMENTATION_PATH
+#define MAGICKCORE_DOCUMENTATION_PATH "${DOCUMENTATION_PATH}"
+#endif
+
+/* Directory where executables are installed. */
+#ifndef MAGICKCORE_EXECUTABLE_PATH
+#define MAGICKCORE_EXECUTABLE_PATH "${CMAKE_INSTALL_PREFIX}/bin"
+#endif
+
+/* filter subdirectory. */
+#ifndef MAGICKCORE_FILTER_DIRNAME
+#define MAGICKCORE_FILTER_DIRNAME "filters"
+#endif
+
+#ifndef MAGICKCORE_SHAREARCH_BASEDIRNAME
+#define MAGICKCORE_SHAREARCH_BASEDIRNAME "config"
+#endif
+
+@HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@SIZEOF_VOID_P ${CMAKE_SIZEOF_VOID_P}
+
 /* Define if building universal (internal helper macro) */
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@AC_APPLE_UNIVERSAL_BUILD
 
@@ -35,10 +72,6 @@
 
 /* Directory where architecture-dependent configuration files live. */
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@CONFIGURE_PATH ${CONFIGURE_PATH}
-
-/* Subdirectory of lib where architecture-dependent configuration files live.
-   */
-@HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@CONFIGURE_RELATIVE_PATH ${CONFIGURE_RELATIVE_PATH}
 
 /* Define if you have DJVU library */
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@DJVU_DELEGATE
@@ -586,6 +619,9 @@
 
 /* Define to 1 if you have the `usleep' function. */
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@HAVE_USLEEP 1
+
+/* Define to 1 if you have the `utimensat' function. */
+@HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@HAVE_UTIMENSAT 1
 
 /* Define to 1 if you have the `vfork' function. */
 @HASHCMAKEDEFINE@ @IMAGEMAGICK_CONFIG_PREFIX@HAVE_VFORK 1

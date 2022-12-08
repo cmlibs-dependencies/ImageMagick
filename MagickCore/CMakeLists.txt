@@ -16,6 +16,9 @@ set( HASHCMAKEDEFINE01 \#cmakedefine01 )
 
 include( ../ConfigurePrefix.cmake )
 
+set( MAGICK_VERSION_HEADER_FILE ${CMAKE_CURRENT_BINARY_DIR}/version.h )
+configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/version.h.in
+  ${MAGICK_VERSION_HEADER_FILE} @ONLY )
 set( MAGICK_CONFIG_HEADER_FILE ${CMAKE_CURRENT_BINARY_DIR}/magick-baseconfig.h )
 configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/../config/config.h.cmake
 	${MAGICK_CONFIG_HEADER_FILE}.step1 @ONLY )
