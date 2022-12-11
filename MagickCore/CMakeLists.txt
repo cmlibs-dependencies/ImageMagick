@@ -41,10 +41,6 @@ if(IMAGEMAGICK_WITH_GDCM-ABI)
     target_compile_definitions(${LIBRARY_TARGET_NAME} PRIVATE MAGICKCORE_GDCM_DELEGATE)
 endif()
 
-if(WIN32)
-    target_compile_definitions(${LIBRARY_TARGET_NAME} PRIVATE MAGICKCORE_WINDOWS_SUPPORT)
-endif()
-
 # Install targets
 if(WIN32 AND BUILD_SHARED_LIBS)
 	set_target_properties(${LIBRARY_TARGET_NAME} PROPERTIES IMPORT_SUFFIX _dll.lib )
