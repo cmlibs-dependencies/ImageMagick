@@ -76,10 +76,7 @@ option( IMAGEMAGICK_WITH_ZLIB "Build ImageMagick with zlib" TRUE )
 set(PACKAGE_CONFIG_DIR "share/cmake/IMAGEMAGICK" CACHE STRING "Directory for package config files (relative to CMAKE_INSTALL_PREFIX).")
 set( IMAGEMAGICK_WITH_QUANTUM_DEPTH 16 CACHE STRING "Set the quantum depth in bits, must be one of 8, 16, 32, or 64")
 
-ADD_DEFINITIONS( -D_LIB -DNeedFunctionPrototypes )
 IF( MSVC )
-	ADD_DEFINITIONS( -D_CRT_SECURE_NO_WARNINGS -D_CRT_NOSTDC_NO_WARNINGS )
-	# ADD_DEFINITIONS( -D_VISUALC_ ) # <-- Could add this but it seems to only be there to pump out messages
 	SET( CMAKE_MFC_FLAG 0 )
 ENDIF()
 

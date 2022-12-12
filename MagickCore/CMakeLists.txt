@@ -47,6 +47,15 @@ if(WIN32 AND BUILD_SHARED_LIBS)
 	install(TARGETS ${LIBRARY_TARGET_NAME} ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
 endif()
 
+if(MSVC)
+  target_compile_definitions(${LIBRARY_TARGET_NAME} PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NOSTDC_NO_WARNINGS)
+  if(BUILD_SHARED_LIBS)
+    target_compile_definitions(${LIBRARY_TARGET_NAME} PUBLIC _DLL)
+  else()
+    target_compile_definitions(${LIBRARY_TARGET_NAME} PUBLIC _LIB)
+  endif()
+endif()
+
 install(TARGETS ${LIBRARY_TARGET_NAME} 
     EXPORT imagemagick-config
 	DESTINATION ${LIB_INSTALL_DIR}
