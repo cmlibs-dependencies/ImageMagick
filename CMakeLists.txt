@@ -101,7 +101,7 @@ if( IMAGEMAGICK_WITH_ZLIB )
 	endif()
 	foreach(_T ${_TARGET_ORDER})
 		if( TARGET ${_T} )
-			list(APPEND EXT_LINK_LIBS ${_T}
+			list(APPEND EXT_LINK_LIBS ${_T})
 			break()
 		endif()
 	endforeach()
