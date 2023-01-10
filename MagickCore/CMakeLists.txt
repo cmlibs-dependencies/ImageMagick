@@ -49,10 +49,8 @@ endif()
 
 if(MSVC)
   target_compile_definitions(${LIBRARY_TARGET_NAME} PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NOSTDC_NO_WARNINGS)
-  if(BUILD_SHARED_LIBS)
-    target_compile_definitions(${LIBRARY_TARGET_NAME} PUBLIC _DLL)
-  else()
-    target_compile_definitions(${LIBRARY_TARGET_NAME} PUBLIC _LIB)
+  if(NOT BUILD_SHARED_LIBS)
+    target_compile_definitions(${LIBRARY_TARGET_NAME} PUBLIC MAGICK_STATIC_DEFINE)
   endif()
 endif()
 
