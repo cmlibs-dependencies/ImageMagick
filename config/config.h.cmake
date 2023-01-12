@@ -994,8 +994,13 @@
 /* Define to `unsigned int' if <sys/types.h> does not define. */
 @HASHCMAKEDEFINE@ size_t ${size_t}
 
+#if defined (_WIN32) || defined (_WIN64)
+#include <BaseTsd.h>
+typedef SSIZE_T ssize_t;
+#else
 /* Define to `int' if <sys/types.h> does not define. */
 @HASHCMAKEDEFINE@ ssize_t ${ssize_t}
+#endif
 
 /* Define as `fork' if `vfork' does not work. */
 @HASHCMAKEDEFINE@ vfork ${vfork}
